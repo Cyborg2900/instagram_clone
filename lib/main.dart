@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,217 +16,143 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: const HomePage(),
     );
   }
 }
 
 
-class MyHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Instagram Clone', style: TextStyle(fontStyle: FontStyle.italic,color: Colors.black),),
+      appBar: AppBar(   //Instagram  bar
+        title: const Text(
+          'Instagram Clone',
+          style: TextStyle(
+            color: Colors.black,
+            fontStyle: FontStyle.italic,
+            fontSize: 30.0,
+          ),
+        ),
         backgroundColor: Colors.white,
+        actions: const [
+          Padding(
+            padding:EdgeInsets.fromLTRB(10.0, 0, 5.0, 0),
+            child: Icon(
+              Icons.add_circle_outline_outlined,
+              color: Colors.black,
+              size: 34.0,
+            ),
+          ),
+          Padding(
+            padding:EdgeInsets.fromLTRB(5.0, 0, 10.0, 0),
+            child: Icon(
+              Icons.messenger_outline_rounded,
+              color: Colors.black,
+              size: 34.0,
+            ),
+          ),
 
+        ],
       ),
+
+
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
 
-            // first post code
-            ConstrainedBox(
-              constraints:const BoxConstraints(
-                maxHeight: 600.0,
-                maxWidth: 400.0,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              height: 120.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
                 children: [
-                  const Text(
-                    'Jack_Butcher',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        height: 3.0,
-                        fontSize: 20,
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(10.0, 5, 20.0, 5),
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.redAccent,
+                          width: 4.0,
+                        ),
+                        image: const DecorationImage(
+                          image: AssetImage('assets/ProfilePic/pro_pic1.jpg'),
+                          fit: BoxFit.fill,
+                        ),
+
+
+                      ),
+                  ),
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(10.0, 5, 20.0, 5),
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.redAccent,
+                        width: 4.0,
+                      ),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/ProfilePic/pro_pic2.webp'),
+                        fit: BoxFit.fill,
+                      ),
+
+
                     ),
                   ),
-                  const Image(
-                    image: AssetImage('assets/Images/bottle.jpg'),
-                    fit: BoxFit.scaleDown,
-                    height: 400.0,
-                  ),
-                  Card(
-                    elevation: 00,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Icon(
-                          Icons.whatshot,
-                          color: Colors.red,
-                          size: 40.0,
-                        ),
-                        Icon(
-                          Icons.double_arrow,
-                          color: Colors.black38,
-                          size: 40.0,
-                        ),
-                      ],
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(10.0, 5, 20.0, 5),
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.redAccent,
+                        width: 4.0,
+                      ),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/ProfilePic/pro_pic3.jpg'),
+                        fit: BoxFit.fill,
+                      ),
+
+
                     ),
-                  )
-                ],
+                  ),
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(10.0, 5, 20.0, 5),
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.redAccent,
+                        width: 4.0,
+                      ),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/ProfilePic/pro_pic4.jpg'),
+                        fit: BoxFit.fill,
+                      ),
+
+
+                    ),
+                  ),
+                ]
               ),
             ),
-
-
-
-            // Second post
-            ConstrainedBox(
-              constraints:const BoxConstraints(
-                maxHeight: 600.0,
-                maxWidth: 400.0,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Unknow Road',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      height: 3.0,
-                      fontSize: 20,
-                    ),
-                  ),
-                  const Image(
-                    image: AssetImage('assets/Images/road.jpg'),
-                    fit: BoxFit.scaleDown,
-                    height: 400.0,
-                  ),
-                  Card(
-                    elevation: 00,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Icon(
-                          Icons.whatshot,
-                          color: Colors.red,
-                          size: 40.0,
-                        ),
-                        Icon(
-                          Icons.double_arrow,
-                          color: Colors.black38,
-                          size: 40.0,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-
-
-            //third post
-            ConstrainedBox(
-              constraints:const BoxConstraints(
-                maxHeight: 600.0,
-                maxWidth: 400.0,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Winter Lake',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      height: 3.0,
-                      fontSize: 20,
-
-                    ),
-                  ),
-                  const Image(
-                    image: AssetImage('assets/Images/frozen_lake.jpg'),
-                    fit: BoxFit.scaleDown,
-                    height: 400.0,
-                    alignment: Alignment(-1, 0),
-                  ),
-                  Card(
-                    elevation: 00,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Icon(
-                          Icons.whatshot,
-                          color: Colors.red,
-                          size: 40.0,
-                        ),
-                        Icon(
-                          Icons.double_arrow,
-                          color: Colors.black38,
-                          size: 40.0,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-
-
-
-            // 4 th post
-            ConstrainedBox(
-              constraints:const BoxConstraints(
-                maxHeight: 600.0,
-                maxWidth: 400.0,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Castle',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      height: 3.0,
-                      fontSize: 20,
-                    ),
-                  ),
-                  const Image(
-                    image: AssetImage('assets/Images/night_castle.jpg'),
-                    fit: BoxFit.scaleDown,
-                    height: 400.0,
-                  ),
-                  Card(
-                    elevation: 00,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Icon(
-                          Icons.whatshot,
-                          color: Colors.red,
-                          size: 40.0,
-                        ),
-                        Icon(
-                          Icons.double_arrow,
-                          color: Colors.black38,
-                          size: 40.0,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-
-
-
           ],
         ),
+
       ),
     );
   }
 }
+
+
